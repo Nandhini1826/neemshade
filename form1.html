@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>My first form</title>
+<style>
+input {
+margin-bottom:10px;
+}
+body {
+font-size:20px;
+}
+</style>
+<script>
+function validateForm() {
+var lname=document.forms["myForm"]["lastname"].value;
+if(lname=="") {
+alert("Last name must be filled out");
+return false;
+}
+var a=document.forms["myForm"]["age"].value;
+if(a<18){
+alert("Age should be greater than 18");
+return false;
+}
+}
+</script>
+</head>
+<body>
+<form name="myForm" action="/action_page.php" onsubmit="return validateForm()" method="post">
+First Name: 
+<input type="text" name="firstname" value="firstname" required><br>
+Last Name:
+<input type="text" name="lastname" value="lastname"><br>
+Age:
+<input type="text" name="age" value="age"><br>
+Gender:<br>
+<input type="radio" name="gender" value="Male">Male<br>
+<input type="radio" name="gender" value="Female">Female<br>
+<input type="radio" name="gender" value="others">Others<br>
+Degree:
+<select name="degree">
+<option value="B.E">B.E</option>
+<option value="B.Tech">B.Tech</option>
+<option value="Bsc">Bsc</option>
+<option value="BCom">BCom</option>
+<option value="BBA">BBA</option>
+</select>
+<br>
+Type: <br>
+<input type="checkbox" name="type" value="fresher">Fresher<br>
+<input type="checkbox" name="type" value="Experienced">Experienced<br>
+<input type="submit" value="submit"><br>
+</form>
+</body>
+</html>
